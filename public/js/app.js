@@ -19,7 +19,7 @@ function mostrarPokemon(pokemons) {
 	pokemons.forEach(function (pokemon) {
 		var $li =$("<li/>");
     $li.addClass("pokeDiv");
-    $li.attr("data-url", pokemons.name);
+    $li.attr("data-url", pokemons.url);
     $li.text(pokemons.name);
     $ul.append($li);
 	});
