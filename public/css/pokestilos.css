@@ -1,0 +1,10 @@
+.imagen-boton {
+  width: 90%;
+}
+.pokeDiv {
+  width:20vh;
+  height: 20vh;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  display:inline-block;
+}
