@@ -1,0 +1,82 @@
+[
+  {
+		"nombre": "beedrill",
+		"imagen": "public/assets/img/beedrill.png"
+	},
+	{
+		"nombre": "bulbasaur",
+		"imagen": "public/assets/img/bulbasaur.png"
+	},
+  {
+		"nombre": "blastoise",
+		"imagen": "public/assets/img/blastoise.png"
+	},
+  {
+		"nombre": "butterfree",
+		"imagen": "public/assets/img/butterfree.png"
+	},
+  {
+		"nombre": "caterpie",
+		"imagen": "public/assets/img/caterpie.png"
+	},
+  {
+		"nombre": "charizard",
+		"imagen": "public/assets/img/charizard.png"
+	},
+  {
+		"nombre": "charmander",
+		"imagen": "public/assets/img/charmander.png"
+	},
+  {
+		"nombre": "charmeleon",
+		"imagen": "public/assets/img/charmeleon.png"
+	},
+  {
+		"nombre": "ivysaur",
+		"imagen": "public/assets/img/ivysaur.png"
+	},
+  {
+		"nombre": "kakuna",
+		"imagen": "public/assets/img/kakuna.png"
+	},
+  {
+		"nombre": "metapod",
+		"imagen": "public/assets/img/metapod.png"
+	},
+  {
+		"nombre": "pidgeot",
+		"imagen": "public/assets/img/pidgeot.png"
+	},
+  {
+		"nombre": "pidgeotto",
+		"imagen": "public/assets/img/pidgeotto.png"
+	},
+  {
+		"nombre": "pidgey",
+		"imagen": "public/assets/img/pidgey.png"
+	},
+  {
+		"nombre": "raticate",
+		"imagen": "public/assets/img/raticate.png"
+	},
+  {
+		"nombre": "rattata",
+		"imagen": "public/assets/img/rattata.png"
+	},
+  {
+		"nombre": "squirtle",
+		"imagen": "public/assets/img/squirtle.png"
+	},
+  {
+		"nombre": "venusaur",
+		"imagen": "public/assets/img/venusaur.png"
+	},
+  {
+		"nombre": "wartortle",
+		"imagen": "public/assets/img/wartortle.png"
+	},
+  {
+		"nombre": "weedle",
+		"imagen": "public/assets/img/weedle.png"
+	},
+]
