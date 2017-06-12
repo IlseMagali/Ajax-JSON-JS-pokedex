@@ -39,7 +39,7 @@ function crearPokemon(pokemons) {
 	});
 }
 
-var plantillaPokemon = "<div id='modal1' class='modal bottom-sheet'>" +
+var plantillaPokemon = "<div id='modal1' class='modal bottom-sheet center'>" +
 	"<div class='modal-content'>" +
 		"<img src='https://dummyimage.com/150x150' alt=''>" +
 		"<h1>__nombre__</h1>" +
@@ -52,17 +52,17 @@ var mostrarDetallePokemon = function () {
   var url = ($(this).data("url"));
   var $pokemonContenedorModal = $("#pokemodal");
   $.getJSON(url, function (response) {
-    $pokemonContenedorModal.html(
-			plantillaPokemon.text(
+    // $pokemonContenedorModal.html(
+			// plantillaPokemon.text(
 				$("#pokeNombre").text(response.name),
 				$("#pokeColor").text("color:" + response.color.name),
 				$("#pokeHabitat").text("habitat:" + response.habitat.name),
 				$("#pokeEspecie").text("especie:" + response.shape.name),
-			)
+			// )
       // plantillaPokemon.replace("__nombre__", response.name)
       //   .replace("__color__", response.color.name).replace("__habitat__", response.habitat.name)
 			// 	.replace("__shape__", response.shape.name)
-    );
+    // );
 		console.log($pokemonContenedorModal);
   });
 
