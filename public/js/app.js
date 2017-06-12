@@ -1,47 +1,45 @@
-var xhr = new XMLHttpRequest();
-
-xhr.onreadystatechange = function (e) {
-	if (this.readyState === 4) {
-		if (this.status === 200) {
-			var response = JSON.parse(this.response);
-			var pokemons = response.results;
-			crearPokemons(pokemons);
-			// var squads = JSON.parse(this.response);
-			// crearSquads(squads);
-		}
-	}
+var cargarPagina = function() {
+	cargarPokemons();
+  $(document).on("click", ".pokemon", mostrarDetallePokemon);
 };
 
-xhr.open("GET", "http://pokeapi.co/api/v2/pokemon/");
+var cargarPokemons = function() {
+  var url = "http://pokeapi.co/api/v2/pokemon-species/";
+  // get es obtener data que puede ser dada como string o como quieran
+  // el metodo mas adecuado es getJSON porque sé que el tipo de info recibido será JSON
+  $.getJSON( url, function (response) {
+    var pokemons = response.results;
+    mostrarPokemon(pokemons);
+  });
 
-xhr.send();
+};
 
-function crearPokemons(pokemons) {
-	// var ul = document.getElementById("pokemons");
-	//
-	// pokemons.forEach(function (pokemon) {
-	// 	var li = document.createElement("li");
-	// 	li.textContent = pokemon.name;
-	// 	ul.appendChild(li);
-	// });
-	var contenedor = document.getElementById("contenedor")
-
-	pokemons.forEach(function (pokemon){
-		var divPoke = document.createElement("div");
-		var imgPoke = document.createElement("img");
-		var nombreSpan = document.createElement("span");
-
-		divPoke.classList.add("pokeDiv");
-
-		nombreSpan.textContent = pokemon.name;
-
-		divPoke.appendChild(nombreSpan);
-		contenedor.appendChild(divPoke);
+function mostrarPokemon(pokemons) {
+	var $ul = $("#contenedor");
+	pokemons.forEach(function (pokemon) {
+		var $li =$("<li/>");
+    $li.addClass("pokeDiv");
+    $li.attr("data-url", pokemons.name);
+    $li.text(pokemons.name);
+    $ul.append($li);
 	});
 }
 
-// Constructor de pokemon
-function pokemon(name, species){
-	this.nombre = name;
-	this.especie = species;
-}
+var plantillaPokemon = "<h1>Nombre pokemon:</h1>" +
+"<ul>" +
+	"<li>__color__</li>" +
+	"<li>__genero__</li>" +
+"</ul>";
+
+var mostrarDetallePokemon = function () {
+  var url = ($(this).data("url"));
+  var $pokemonContenedor = $("#pokemonContenedor");
+  $.getJSON(url, function (response) {
+    $pokemonContenedor.html(
+      plantillaPokemon.replace("__nombre__", response.name)
+        .replace("__color__", response.color).replace("__genero__", response.gender)
+    );
+  });
+};
+
+$(document).ready(cargarPagina);
